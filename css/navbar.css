@@ -1,0 +1,143 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+/* end global rules */
+/* start navbar */
+
+.nav {
+  background: rgba(224, 196, 196, 0.24);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.3px);
+  -webkit-backdrop-filter: blur(6.3px);
+  border: 1px solid rgba(224, 196, 196, 0.42);
+  height: 66px;
+  position: sticky;
+  top: 0;
+}
+.nav .container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav .container ul {
+  margin: 0;
+  padding: 0;
+}
+
+.nav .container ul li {
+  list-style: none;
+  margin-left: 15px;
+  padding: 20px;
+  position: relative;
+}
+
+ul li a {
+  text-decoration: none;
+  color: rgb(69, 67, 67);
+  font-weight: bold;
+}
+
+.container ul li:hover {
+  border-bottom: 5px solid #79b5b4;
+  background: rgba(0.47, 0.71, 0.71, 0.24);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.3px);
+  -webkit-backdrop-filter: blur(6.3px);
+}
+.nav .logo {
+  margin-top: 5px;
+}
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.nav .logo img {
+  height: 50px;
+  animation: spin infinite 3s ease;
+}
+
+.nav .burger {
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 66px;
+  align-items: flex-end;
+  position: relative;
+}
+.burger span {
+  height: 3px;
+  width: 100%;
+  margin-bottom: 5px;
+  background-color: black;
+}
+.burger span:nth-child(2) {
+  width: 50%;
+  transition: 0.5s;
+}
+.burger:hover span:nth-child(2) {
+  width: 100%;
+}
+
+@media (max-width: 885px) {
+  .nav ul {
+    display: none;
+  }
+}
+@media (min-width: 885px) {
+  .nav ul {
+    display: flex;
+  }
+  .nav .burger {
+    display: none;
+  }
+}
+
+.show {
+  flex-direction: column;
+  z-index: 2;
+  position: absolute;
+  right: 15px;
+  top: 65px;
+  border-bottom: 1px solid #eee;
+  background: rgba(0.47, 0.71, 0.71, 0.24);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.3px);
+  -webkit-backdrop-filter: blur(6.3px);
+  border-radius: 5px;
+  padding: 2px !important;
+}
+.show li {
+  margin-left: -2px !important;
+}
+.show li a {
+  color: white !important;
+}
+/* end navbar */
