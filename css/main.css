@@ -32,7 +32,7 @@ body {
 
 /* start login */
 .login {
-  background-image: url(/imgs/cover.png);
+  background-image: url(./../imgs/cover.png);
   height: 100vh;
   display: flex;
   justify-content: center;
