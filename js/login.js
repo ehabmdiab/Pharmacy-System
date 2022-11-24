@@ -40,14 +40,16 @@ login.addEventListener("click", (e) => {
   if (email.value == "") {
     validateMsg("email", "Please enter your email");
     validation = false;
-  } else if (email.value.length < 6) {
+  }
+  if (email.value.length < 6) {
     validateMsg("email", "Please enter a valid email");
     validation = false;
   }
   if (password.value == "") {
     validateMsg("password", "Please enter your password");
     validation = false;
-  } else if (password.value.length < 5) {
+  }
+  if (password.value.length < 5) {
     validateMsg("password", "password must be at least 5 characters long");
     validation = false;
   }
