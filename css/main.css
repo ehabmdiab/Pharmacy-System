@@ -32,14 +32,19 @@ body {
 
 /* start login */
 .login {
-  background-image: url(./../imgs/cover.png);
+  /* background-image: url(./../imgs/cover.png); */
+  position: absolute;
   height: 100vh;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
+  margin: 0 auto;
+  z-index: 2;
 }
-.login::before {
+/* .login::before {
   content: "";
   height: 100%;
   width: 100%;
@@ -47,7 +52,7 @@ body {
   top: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.7);
-}
+} */
 .login form {
   z-index: 2;
   display: flex;
@@ -58,10 +63,10 @@ body {
   border-radius: 6px;
   align-items: center;
   /*  */
-  background: rgba(224, 196, 196, 0.24);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(6.3px);
-  -webkit-backdrop-filter: blur(6.3px);
+  background: rgba(224, 196, 196, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.048);
+  backdrop-filter: blur(1.3px);
+  -webkit-backdrop-filter: blur(1.3px);
   border: 1px solid rgba(224, 196, 196, 0.42);
 }
 .login form img {

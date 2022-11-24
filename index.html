@@ -7,18 +7,36 @@
     <title>Pharmacy Management</title>
     <link rel="stylesheet" href="./css/Normalize.css" />
     <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/three.css" />
   </head>
   <body>
-    <!-- start login -->
-    <section class="login" id="login">
-      <form action="">
-        <img src="./imgs/doctor.png" alt="" />
-        <input type="email" placeholder="Enter Your Email" />
-        <input type="password" placeholder="Enter Your Password" />
-        <input type="submit" value="Login" />
-      </form>
-    </section>
-    <!-- end login -->
+    <!--  -->
+    <div class="container-fluid fixed-top header disable-selection">
+      <div class="row">
+        <div class="col"></div>
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col">
+              <!-- START LOGIN -->
+              <section class="login" id="login">
+                <form action="">
+                  <img src="./imgs/doctor.png" alt="" />
+                  <input type="email" placeholder="Enter Your Email" />
+                  <input type="password" placeholder="Enter Your Password" />
+                  <input type="submit" value="Login" />
+                </form>
+              </section>
+              <!--END LOGIN  -->
+              <p href="#" role="button" onclick="cameraSet()"></p>
+            </div>
+          </div>
+        </div>
+        <div class="col"></div>
+      </div>
+    </div>
+
     <script src="./js/login.js" type="module"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="./js/three.js" type="module"></script>
   </body>
 </html>
