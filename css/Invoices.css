@@ -21,3 +21,21 @@ table td {
 table tr:nth-child(even) {
   background-color: #eee;
 }
+
+@media (max-width: 880px) {
+  table {
+    font-size: 12px;
+  }
+  table td {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 335px) {
+  table {
+    font-size: 8px;
+  }
+  table td {
+    padding: 2px;
+  }
+}
