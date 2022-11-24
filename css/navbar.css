@@ -39,6 +39,7 @@ body {
   height: 66px;
   position: sticky;
   top: 0;
+  z-index: 2;
 }
 .nav .container {
   display: flex;
