@@ -8,5 +8,3 @@ burger.addEventListener("click", () => {
     ul.style.display = "none";
   }
 });
-
-console.log(ul);

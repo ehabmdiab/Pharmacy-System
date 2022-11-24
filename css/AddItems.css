@@ -1,0 +1,10 @@
+body {
+  background-color: #e0e0e0;
+  opacity: 0.7;
+  background-image: repeating-radial-gradient(
+      circle at 100px 100px,
+      transparent 0,
+      #e0e0e0 40px
+    ),
+    repeating-linear-gradient(#faf1f055, #faf1f0);
+}

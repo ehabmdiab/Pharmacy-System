@@ -14,8 +14,8 @@ function Alertt(msg, bool) {
         border: 1px solid rgba(224, 196, 196, 0.42);
         z-index: 3;
         color:white;
-        width: 600px;
-        height: 300px;
+        width: 400px;
+        height: 200px;
         display: flex;
         justify-content: center;
         align-items: center;
