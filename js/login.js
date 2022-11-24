@@ -47,6 +47,6 @@ login.addEventListener("click", (e) => {
   } else if (password.value.length < 5) {
     validateMsg("password", "password must be at least 5 characters long");
   } else {
-    window.location.href = "/html/items.html";
+    window.location.href = "Pharmacy-System/html/items.html";
   }
 });
