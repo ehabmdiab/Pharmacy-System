@@ -34,12 +34,27 @@
     <!-- start body -->
     <section class="body">
       <div class="form">
+        <h1> Add Item</h1>
         <input type="text" class="name" placeholder="Name" />
         <input type="number" class="price" placeholder="Price" />
         <input type="number" class="Quantity" placeholder="Quantity" />
-        <input type="submit" value="Add" />
+        <!--  -->
+
+    
+        <div id="vid-con">
+          <video autoplay="false" id="videoElement"></video>
+          <canvas id="showscreenshot"></canvas>
+          <button class="vid-but" type="button" id="stop" >&#9632</button>
+          <button class="vid-but" type="button" id="start" >&#9654</button>
+          <button class="vid-but" type="button" id="take" >&#9688</button>
+        </div>
+          
+
+        <input type="submit" value="Add" id="Add" />
       </div>
     </section>
     <!-- end body -->
+    <script src="./../js/addItems.js" type="module"></script>
+    <script src="./../js/navbar.js"></script>
   </body>
 </html>

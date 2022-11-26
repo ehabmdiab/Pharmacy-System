@@ -7,5 +7,92 @@
       #fafeff 11px
     ),
     repeating-linear-gradient(#f3f3f455, #f3f3f4);
-  height: calc(100vh - 66px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.body .form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
+  padding: 20px;
+  width: 68vw;
+  margin-top: 10px;
+  flex-direction: column;
+  /*  */
+  background: rgba(9, 9, 9, 0.8);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: white;
+}
+
+.form .name,
+.form .price,
+.form .Quantity {
+  margin-bottom: 25px;
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  width: 50%;
+  border-radius: 8px;
+}
+.form .Quantity {
+  margin-bottom: 40px;
+}
+.form h1 {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+#showscreenshot {
+  width: 45%;
+  height: 31vh;
+  display: inline-block;
+  border: 5px #755353 solid;
+  border-radius: 10px;
+  z-index: 5;
+}
+
+.vid-but {
+  margin-top: 10px;
+  display: inline;
+  width: 10%;
+  background-color: #ffff;
+  border: none;
+  border-radius: 10px;
+  z-index: 5;
+}
+
+#vid-con {
+  margin: auto;
+  z-index: 5;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 100%;
+}
+
+#videoElement {
+  width: 46%;
+  height: 31vh;
+  z-index: 5;
+  border: 5px #755353 solid;
+  border-radius: 10px;
+}
+
+[type="submit"] {
+  margin-top: 40px;
+  padding: 10px;
+  width: 15vw;
+  background-color: #e04316;
+  color: white;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
 }

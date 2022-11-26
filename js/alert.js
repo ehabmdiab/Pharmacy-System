@@ -19,7 +19,7 @@ function Alertt(msg, bool) {
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: 2rem;
+        font-size: 22px;
     `;
   if (bool == true) {
     alert.style.color = "red";
