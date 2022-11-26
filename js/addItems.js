@@ -13,12 +13,16 @@ async function startCamera() {
 
 function stopCamera(e) {
   let stream = video.srcObject;
-  let tracks = stream.getTracks();
-  for (let i = 0; i < tracks.length; i++) {
-    let track = tracks[i];
-    track.stop();
+  let tracks;
+  if (stream) {
+    tracks = stream.getTracks();
+
+    for (let i = 0; i < tracks.length; i++) {
+      let track = tracks[i];
+      track.stop();
+    }
+    video.srcObject = null;
   }
-  video.srcObject = null;
 }
 
 function takeScreenshot() {
@@ -28,7 +32,7 @@ function takeScreenshot() {
   ctx.drawImage(video, 0, 0);
 }
 
-// validation
+// validation start
 let Name = document.querySelector(".name");
 let price = document.querySelector(".price");
 let quantity = document.querySelector(".Quantity");
@@ -82,7 +86,7 @@ function validate() {
   return validated;
 }
 
-// validation
+// validation end
 
 let stop = document.getElementById("stop");
 let start = document.getElementById("start");
