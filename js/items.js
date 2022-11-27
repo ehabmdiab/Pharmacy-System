@@ -43,7 +43,6 @@ function showItems() {
       },
       function (tx, err) {
         console.log(err);
-        alert(err.message);
       }
     );
   });
