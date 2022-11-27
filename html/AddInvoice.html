@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Invoice</title>
+    <link rel="stylesheet" href="./../css/Normalize.css" />
+    <link rel="stylesheet" href="./../css/navbar.css" />
+    <link rel="stylesheet" href="./../css/AddInvoice.css" />
+  </head>
+  <body>
+    <!-- start nav -->
+    <nav class="nav">
+      <div class="container">
+        <div class="logo">
+          <img src="./../imgs/logo.png" alt="" />
+        </div>
+        <ul class="ul">
+          <li><a href="">Home</a></li>
+          <li><a href="./items.html">Items</a></li>
+          <li><a href="./AddItems.html">ِAdd Item</a></li>
+          <li><a href="./Invoices.html">Invoices</a></li>
+          <li><a href="./AddInvoice.html">Add Invoice</a></li>
+        </ul>
+        <div class="burger" id="burger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </nav>
+    <!-- end nav -->
+    <!-- start body -->
+    <section class="body">
+      <div class="form">
+        <h1>Add Invoice</h1>
+        <input
+          type="text"
+          id="customer"
+          placeholder="Customer Name"
+          required
+          autofocus
+        />
+        <select id="select">
+          <option selected value="0">Choose the transaction type</option>
+          <option value="1">Buy</option>
+          <option value="2">Sell</option>
+        </select>
+        <input list="item" placeholder="Item Name" required />
+        <datalist id="item"> </datalist>
+
+        <input type="number" id="quantity" placeholder="Quantity" required />
+        <input type="date" id="date" required />
+
+        <input type="submit" value="Add" id="Add" />
+      </div>
+    </section>
+    <!-- end body -->
+
+    <script src="./../js/addInvoice.js" type="module"></script>
+    <script src="./../js/navbar.js"></script>
+  </body>
+</html>
