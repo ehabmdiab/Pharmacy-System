@@ -126,15 +126,118 @@ function addInvoice() {
     );
 
     tx.executeSql(
-      "insert into invoices(id,date,CustomerName,type,item,quantity) values(?,?,?,?,?,?)",
-      [id, date, customerName, transaction, datalistInput, quantity],
-      function (tx, result) {
-        Alertt(" ✅ Invoice Added Successfully");
-      },
+      "create table if not exists items (id int primary key ,name varchar(200), price int ,quantity int ,image varchar)",
+      null,
+      function (tx, result) {},
       function (tx, error) {
         console.log(error);
       }
     );
+
+    if (transaction == "2") {
+      // if transaction is sell decrease item quantity by the invoice quantity
+
+      tx.executeSql(
+        "select quantity from items where name =?",
+        [datalistInput],
+        function (tx, result) {
+          if (result.rows[0] == undefined) {
+            Alertt("PLease add the item first", true);
+          } else {
+            let itemQuantity = result.rows[0].quantity;
+            console.log(itemQuantity);
+            //
+            if (+itemQuantity - +quantity >= 0) {
+              tx.executeSql(
+                "update items set quantity = ? where name = ?",
+                [+itemQuantity - +quantity, datalistInput],
+                function (tx, result) {},
+                function (tx, error) {
+                  console.log(error);
+                }
+              );
+              // adding invoice
+              tx.executeSql(
+                "insert into invoices(id,date,CustomerName,type,item,quantity) values(?,?,?,?,?,?)",
+                [id, date, customerName, transaction, datalistInput, quantity],
+                function (tx, result) {
+                  Alertt(" ✅ Invoice Added Successfully");
+                },
+                function (tx, error) {
+                  console.log(error);
+                }
+              );
+              // end adding invoice
+            } else {
+              Alertt("there is no enough quantity", true);
+              clearInputs();
+            }
+
+            //
+          }
+        },
+        function (tx, error) {
+          console.log(error);
+          Alertt("please add items first", true);
+          clearInputs();
+        }
+      );
+      //  subtracting the invoice quantity from the item quantity
+    } else if (transaction == 1) {
+      // if transaction is buy increase item quantity by the invoice quantity
+
+      try {
+        tx.executeSql(
+          "select quantity from items where name =?",
+          [datalistInput],
+          function (tx, result) {
+            if (result.rows[0] == undefined) {
+              Alertt("please add items first", true);
+              clearInputs();
+            } else {
+              let itemQuantity = +result.rows[0].quantity;
+              console.log(itemQuantity);
+              tx.executeSql(
+                "update items set quantity = ? where name = ?",
+                [itemQuantity + +quantity, datalistInput],
+                function (tx, result) {
+                  tx.executeSql(
+                    "insert into invoices(id,date,CustomerName,type,item,quantity) values(?,?,?,?,?,?)",
+                    [
+                      id,
+                      date,
+                      customerName,
+                      transaction,
+                      datalistInput,
+                      quantity,
+                    ],
+                    function (tx, result) {
+                      Alertt(" ✅ Invoice Added Successfully");
+                    },
+                    function (tx, error) {
+                      console.log(error);
+                      Alertt("Please enter item name from the list", true);
+                    }
+                  );
+                },
+                function (tx, error) {
+                  console.log(error);
+                  Alertt("Please enter item name from the list", true);
+                }
+              );
+            }
+          },
+          function (tx, error) {
+            Alertt("please add items first", true);
+            console.log(error);
+            clearInputs();
+          }
+        );
+      } catch (e) {
+        Alertt("Please enter item name from the list", true);
+      }
+      //  adding the invoice quantity to the item quantity
+    }
   });
 }
 
@@ -142,10 +245,14 @@ add.addEventListener("click", (e) => {
   if (validate()) {
     addInvoice();
 
-    customerName.value = quantity.value = date.value = "";
-    transaction.value = 0;
-    datalistInput.value = "";
+    clearInputs();
   }
 });
+
+function clearInputs() {
+  customerName.value = quantity.value = date.value = "";
+  transaction.value = 0;
+  datalistInput.value = "";
+}
 
 // end database and crud

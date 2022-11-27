@@ -144,5 +144,7 @@ Add.addEventListener("click", (e) => {
   if (validate()) {
     AddItem();
     price.value = Name.value = quantity.value = "";
+    const context = canvas.getContext("2d");
+    context.clearRect(0, 0, canvas.width, canvas.height);
   }
 });
