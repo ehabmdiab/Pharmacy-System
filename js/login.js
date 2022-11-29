@@ -54,6 +54,6 @@ login.addEventListener("click", (e) => {
     validation = false;
   }
   if (validation) {
-    window.location.href += "/html/items.html";
+    window.location.href += "/html/home.html";
   }
 });

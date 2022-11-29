@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <!-- font awesome start -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!--font awesome end  -->
+    <link rel="stylesheet" href="./../css/home.css" />
+    <!-- <link rel="stylesheet" href="./../css/Normalize.css" /> -->
+    <link rel="stylesheet" href="./../css/navbar.css" />
+    <link rel="shortcut icon" href="./../imgs/logo.png" type="image/x-icon" />
+  </head>
+  <body>
+    <!-- start nav -->
+    <nav class="nav">
+      <div class="container">
+        <div class="logo">
+          <img src="./../imgs/logo.png" alt="" />
+        </div>
+        <ul class="ul">
+          <li><a href="./home.html">Home</a></li>
+          <li><a href="./items.html">Items</a></li>
+          <li><a href="./AddItems.html">ِAdd Item</a></li>
+          <li><a href="./Invoices.html">Invoices</a></li>
+          <li><a href="./AddInvoice.html">Add Invoice</a></li>
+        </ul>
+        <div class="burger" id="burger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </nav>
+    <!-- end nav -->
+    <!-- start body -->
+    <section class="body">
+      <div class="container">
+        <div class="heading">
+          <h1>Dashboard</h1>
+          <hr />
+        </div>
+        <div class="boxes">
+          <div class="box items">
+            <div class="content">
+              <div class="text">
+                <h1 id="items">0</h1>
+                <h3>Number of items</h3>
+              </div>
+              <div class="icon">
+                <i class="fas fa-duotone fa-pills"></i>
+              </div>
+            </div>
+          </div>
+          <!--  -->
+          <div class="box invoices">
+            <div class="content">
+              <div class="text">
+                <h1 id="invoices">0</h1>
+                <h3>Number of Invoices</h3>
+              </div>
+              <div class="icon">
+                <i class="fas fa-duotone fa-file-invoice"></i>
+              </div>
+            </div>
+          </div>
+          <!--  -->
+          <div class="box out">
+            <div class="content">
+              <div class="text">
+                <h1 id="out">0</h1>
+                <h3>Out of Stock</h3>
+              </div>
+              <div class="icon">
+                <i class="fas fa-duotone fa-warehouse"></i>
+              </div>
+            </div>
+          </div>
+          <!--  -->
+          <div class="box salesnum">
+            <div class="content">
+              <div class="text">
+                <h1 id="salesnum">0</h1>
+                <h3>Number of sales</h3>
+              </div>
+              <div class="icon">
+                <i class="fas fa-sharp fa-solid fa-percent"></i>
+              </div>
+            </div>
+          </div>
+          <!--  -->
+          <div class="box buynum">
+            <div class="content">
+              <div class="text">
+                <h1 id="buynum"></h1>
+                <h3>Number of Purchases</h3>
+              </div>
+              <div class="icon">
+                <i class="fas fa-duotone fa-cart-shopping"></i>
+              </div>
+            </div>
+          </div>
+          <!--  -->
+          <div class="box sales">
+            <div class="content">
+              <div class="text">
+                <h1 id="sales">0</h1>
+                <h3>Total Sales</h3>
+              </div>
+              <div class="icon">
+                <i class="fas fa-solid fa-money-check-dollar"></i>
+              </div>
+            </div>
+          </div>
+          <!--  -->
+        </div>
+      </div>
+    </section>
+    <!-- end body -->
+
+    <script src="./../js/navbar.js"></script>
+    <script src="./../js/home.js"></script>
+  </body>
+</html>

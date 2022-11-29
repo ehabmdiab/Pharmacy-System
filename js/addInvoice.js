@@ -11,6 +11,24 @@ let db = openDatabase(
 
 db.transaction(function (tx) {
   tx.executeSql(
+    "Create table if not exists invoices(id int primary key,date varchar,CustomerName varchar(500),type varchar,item varchar(500),quantity int)",
+    null,
+    function (tx, result) {},
+    function (tx, error) {
+      console.log(error);
+    }
+  );
+
+  tx.executeSql(
+    "create table if not exists items (id int primary key ,name varchar(200), price int ,quantity int ,image varchar)",
+    null,
+    function (tx, result) {},
+    function (tx, error) {
+      console.log(error);
+    }
+  );
+
+  tx.executeSql(
     "SELECT * FROM items",
     [],
     function (tx, result) {
@@ -116,24 +134,6 @@ function addInvoice() {
   let datalistInput = document.querySelector('[list="item"]').value;
 
   db.transaction(function (tx) {
-    tx.executeSql(
-      "Create table if not exists invoices(id int primary key,date varchar,CustomerName varchar(500),type varchar,item varchar(500),quantity int)",
-      null,
-      function (tx, result) {},
-      function (tx, error) {
-        console.log(error);
-      }
-    );
-
-    tx.executeSql(
-      "create table if not exists items (id int primary key ,name varchar(200), price int ,quantity int ,image varchar)",
-      null,
-      function (tx, result) {},
-      function (tx, error) {
-        console.log(error);
-      }
-    );
-
     if (transaction == "2") {
       // if transaction is sell decrease item quantity by the invoice quantity
 

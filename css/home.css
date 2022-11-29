@@ -1,0 +1,113 @@
+.body {
+  background-color: #fafeff;
+  background-image: repeating-radial-gradient(
+      circle at 0 0,
+      transparent 0,
+      #fafeff 11px
+    ),
+    repeating-linear-gradient(#f3f3f455, #f3f3f4);
+  height: 100%;
+  padding-bottom: 90px;
+}
+
+.body hr {
+  background-color: #ccc;
+  margin-top: 10px;
+}
+.heading {
+  position: relative;
+  top: 30px;
+}
+.heading h1 {
+  font-size: 30px;
+  font-weight: bold;
+  color: #777;
+}
+
+.boxes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 40px;
+  margin-top: 80px;
+}
+
+.box {
+  color: white;
+  padding: 40px 20px;
+  border-radius: 6px;
+}
+.box .content {
+  display: flex;
+  justify-content: space-between;
+}
+.box .content .text {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.content .text h3 {
+  margin-top: 40px;
+}
+.content .text h1 {
+  font-weight: 800;
+  font-size: 32px;
+}
+
+.box .content .icon {
+  font-size: 62px;
+  margin-left: 90px;
+  transition: 0.6s;
+}
+
+.box:hover .content .icon {
+  transform: scale(1.1);
+}
+
+.items {
+  background-color: #4670d9;
+}
+.items .icon {
+  color: #3064bf;
+}
+.invoices {
+  /* background: linear-gradient(to right, #c33764, #1d2671); */
+  background-color: #d94bcd;
+}
+.invoices .icon {
+  color: #b73fad;
+}
+
+.out {
+  /* background: linear-gradient(to right, #003973, #e5e5be); */
+  background-color: #b560dc;
+}
+.out .icon {
+  color: #974eb8;
+}
+.salesnum {
+  /* background: linear-gradient(to right, #f0c27b, #4b1248); */
+  background-color: #43b32a;
+}
+.salesnum .icon {
+  color: #429c20;
+}
+.buynum {
+  /* background: linear-gradient(to right, #5d4157, #a8caba); */
+  background-color: #b45fdc;
+}
+.buynum .icon {
+  color: #8e4aad;
+}
+.sales {
+  /* background: linear-gradient(to right, #c04848, #480048); */
+  background-color: #d94bcc;
+}
+.sales .icon {
+  color: #b43ca8;
+}
+@media (max-width: 300px) {
+  .box {
+    width: 250px;
+  }
+}
+/* end boxes */
